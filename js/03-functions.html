@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Переменные и типы данных</title>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Материалы по теме "Функции"
+    </h1>
+    <section>
+        <h2>Объявление функции и функциональные выражения</h2>
+        <p>
+            <b>Функция</b> – часть кода, доступная по ссылке, который можно вызвать несколько раз. Функция – это
+            абстрактное
+            понятие скрывающее однотипные действия. Например, каждый раз когда я знакомлюсь с кем-то, мне нужно
+            рассказывать
+            о себе. Если я каждый раз придумываю рассказ о себе – он получается так себе. Поэтому я могу сесть, написать
+            рассказ о себе, выучить его, отрепетировать и теперь при каждом знакомстве – буду рассказывать красивый и
+            выгодно выставляющий меня текст. Это и будет функция "Рассказать о себе". Другие примеры функций в реальной
+            жизни: обуться (вы завязываете шнурки не думая), приготовить яишницу (тут в зависимости от специй разные
+            параметры у функции), отжимание в зале (это последовательность действий – опуститься и подняться).
+            <br>
+            <br>
+            <b>Подумайте, а какие функции есть в вашей жизни? Обращайте внимание на подобные вещи в реальном мире –
+                например, открытие двери в поезде метро</b><i>(сначала диспетчер объявит об этом, потом дверь откроется,
+            потом
+            диспетчер объявит о закрытии, потом дверь закроется и так происходит каждую станцию метро)</i>, <b>в
+            конце-концов
+            мы будем работать с реальным бизнесом.</b>
+            <br>
+        </p>
+        <br><br>
+        <p>
+            Фунцию можно объявить несколькими разными способами: <b>function declaration <i>(определение
+            функции)</i></b> и
+            <b>function expression <i>(выржаение функции)</i></b>
+        </p>
+        <br><br>
+        <h3>Function Declaration</h3>
+        <div class="subsection">
+            <p>Функция в этом случае создается с помощью ключевого слова function и ей необходимо задать имя, для того,
+                чтобы иметь возможность вызвать эту функции позже.</p>
+            <p>Все функции определенные этим способом доступны на любой строке кода в нашей программе, т.к происходит
+                hoisting(поднятие функций вверх).</p>
+            <p>
+                Поднятие функций вверх работает потому, что интерпретатор Javascript – "читает" код несколько раз. В
+                первый
+                раз он смотрит на все функции и переменные(только на названия) – чтобы зарезервировать место в
+                оперативной
+                памяти. (Это действие необходимо любой программе). Каждая переменная/функция в javascript занимает
+                определенное ограниченное
+                количество памяти(см. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures">документацию</a>).
+            </p>
+        </div>
+
+        <h3>Function Expression</h3>
+        <div class="subsection">
+            <p>В этом случае функция задается как значение переменной и поэтому имя функции в этом случае указывать
+                необязательно.</p>
+            <p>В отличии он Function Declaration – в этом случае функция будет доступна ниже в коде, только после строки
+                с
+                объявлением функции в переменную.</p>
+            <p>В любом случае – рекомендуется вначале объявлять функции, а затем их использовать ниже по коду.</p>
+        </div>
+
+        <h3>Arrow Function (Стрелочная функция)</h3>
+        <div class="subsection">
+            <p>Существует еще один способ объявить функцию – стрелочная функция. Является альтернативным вариантом <b>function
+                expression</b>. Данные функции и их преимущества по сравнению с обычными буду рассмотрены в следующих
+                занятиях</p>
+        </div>
+        <div class="codepen-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+               data-slug-hash="gOpYgBG"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-decl">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/gOpYgBG">
+  func-decl</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Параметры и аргументы функции</h2>
+        <p>Каждая функция состоит из <b>ключевого слова <code>function</code>, имени функции, параметров функции, тела
+            функции и инструкции <code>return</code> – сообщающей нам что функция завершила свое выполнение</b></p>
+        <br><br>
+        <p>Не стоит путать объявление функции, с её вызовом. Вызов функции – это временный прыжок к коду где объявлена
+            сама
+            функция. После выполнения функции – мы продолжим с того места где вызывали функцию, при этом вместо вызова
+            функции мы получим результат (то, что вернула функция после ключеового слова <code>return</code>)</p>
+        <br><br>
+        <p>
+            Вызов функции состоит из: <b>названия функции</b> и <b>аргументов функции</b>
+        </p>
+        <div class="image-description">
+            <img src="../images/function-params.png" alt="">
+            <div class="image-description-content">
+                Из каких частей состоит функция
+            </div>
+        </div>
+        <h3>Параметры по умолчанию</h3>
+        <div class="subsection">
+            <p>
+                В современном синтаксисе ECMAScript, можно задавать значения по умолчанию аргументам, в том случае если
+                аргумент не был передан или было передано значение <code>undefined</code>
+            </p>
+            <br>
+            <div class="codepen-wrapper">
+                <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+                   data-user="trostinsky" data-slug-hash="QWbLvog"
+                   style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+                   data-pen-title="func-default-params">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/QWbLvog">
+  func-default-params</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+            </div>
+        </div>
+        <h3>Возвращаемое значение функции – return</h3>
+        <div class="subsection">
+            <p>
+                Каждая функция так или иначе возвращает значения. Возвращаемое значение может быть чем угодно: <b>числом,
+                строкой, булевым значением, массивом, объектом и даже другой функцией</b>.
+                <br><br>
+                Если в функции указано ключевое слово <code>return</code> то все что указано после этого ключевого слова
+                до
+                <code>;</code> или конца строки – будет возвращаемым значением из функции.
+                <br><br>
+                Если в функции неуказано ключевое слово <code>return</code>, функция вернет <code>undefined</code>.
+            </p>
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="xxGKgmw"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-return">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/xxGKgmw">
+  func-return</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+        <h3>REST и SPREAD операторы в функциях</h3>
+        <div class="subsection">
+            <p>
+                <b>Rest-оператор</b> – Оператор, который позволяет собрать все переданные в функцию аргументы в один
+                общий
+                массив. (Массивы будут рассмотрены на следующем занятии)
+            </p>
+            <br><br>
+            <p>
+                <b>Spread-оператор</b> – Обратный оператор к rest. Позволяет разложить массив на аргументы в функции.
+            </p>
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="VwLZPRP"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="VwLZPRP">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/VwLZPRP">
+  VwLZPRP</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+        <h3>Области видимости функций</h3>
+        <div class="subsection">
+            Каждая функция создает свою область видимости для переменных. Переменные определенные внутри функции – не
+            будут
+            видны вне её. Чтобы это запомнить легко – можно следовать логике <b>block scope</b>. Каждые фигурные скобки
+            <code>{}</code> создают закрытую область видимости. И переменные вне этих скобок видны в другом месте кода
+            не
+            будут.
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="MWwgJRd"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-scope">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/MWwgJRd">
+  func-scope</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Функциональное программирование</h2>
+        <p>
+            <b>Функциональное программирование</b> – теоретический раздел "науки" программирования (еще их называют
+            парадигмами), берущий свое начало от раздела математики "Дискретная математика". К счастью, с классическими
+            математическими формулами общего не так уж и много. По сути – это набор общепринятых стандартов написания
+            функций – которые сделают ваш код читабельнее и надёжнее.
+            В курсе мы будем рассматривать базовые концепции функционального программирования.
+        </p>
+        <h3>Мутабельность и иммутабельность</h3>
+        <div class="subsection">
+            <p>
+                Если выполняя свою работу функция меняет данные вне своей области видимости – она называется <i><b>мутабельной</b></i>.
+                <br>
+                В большинстве случаев мы должны избегать подобных функций, т.к эти функции могут приводить к
+                неожиданному
+                поведению нашей программы.
+                Представьте себе, что кто-то имеет возможность случайным образом взаимодействовать с вашим смартфоном:
+                удалять что ему вздумается, создавать что ему вздумается и при этом вы никак это не контроллируете.
+                <br><br>
+                <b>Иммутабельными</b> – называются такие функции, которые не изменяют переменные вне своей области
+                видимости. Мы должны стремиться всегда писать только такие функции.
+            </p>
+        </div>
+        <h3>Чистые функции</h3>
+        <div class="subsection">
+            <p>
+                Это функции, которые являются полностью иммутабельными(не меняют внешние переменные), а так же для одних
+                и тех же аргументов, возращают одинаковые значения. (Не обращаются ко внешним переменным/константам).
+            </p>
+            <p>
+                Функции, которые используют <code>Math.random</code> или объект <code>Date</code>, не могут быть чистыми.
+            </p>
+            <p>
+                Такие функции писать не всегда бывает возможно, но нужно стремиться создавать свои функции чистыми.
+                Общее
+                правило: функция должна получить какие-то данные, преобразовать их и вернуть. <b>Для одних и тех же
+                аргументов функции – результат должен быть одинаковым.</b>
+                В вашем домашнем задании <b>ВСЕ</b> функции должны получиться чистыми.
+            </p>
+        </div>
+        <div class="codepen-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="VwLZPJp"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-pure">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/VwLZPJp">
+  func-pure</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+
+        <h3>Single Responsibility (Принцип единой ответственности)</h3>
+        <div class="subsection">
+            <p>
+                Принцип единой ответственности – это правило, согласно которому каждая написанная в программе функция
+                должна
+                быть ответственна только за <b>ОДНО</b> действие.
+            </p>
+            <p>Пример функций соответствующих данному принципу: <b>Перевести одну валюту в другую</b>, <b>Посчитать
+                количество одинаковых букв в слове</b>, <b>отправить сообщение пользователю</b>, <b>Показать всплывающее
+                окно пользователю</b> и другие.</p>
+            <p>Старайтесь писать ваш код таким образом – чтобы каждая функция соответсвовала только одному действию.</p>
+            <br><br>
+            <p><b><i>В то же время существует одно исключение.</i></b> Это паттерн фасад – который будет рассмотрен чуть
+                позже в
+                теме Объектно Ориентированного Программирования. В этом случае – функция может объединять в себе вызов
+                нескольких разных функций с единой ответственностью. Однако при более детальном рассмотрении – станет
+                очевидно, ответственность у этой функции – вызвать цепочку других функций.
+                <br>
+                <br>
+                Знаю, знаю, сейчас это читать сложно :) Со временем мы будем практиковаться и все эти принципи станут
+                для
+                вас очень простыми!
+            </p>
+        </div>
+        <div class="codepen-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="MWwgJNM"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-single">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/MWwgJNM">
+  func-single</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+
+        <h3>Рекурсия</h3>
+        <div class="subsection">
+            <p>
+                <b>Рекурсия</b> – это процесс, в котором функция вызвает саму себя, до тех пор, пока не выполнится некое
+                условие.
+                Использовать рекурсии необходимо очень осторожно, ведь можно запросто попасть в бесконечный цикл. Для
+                этого
+                рекомендуется всегда устанавливать <b>максимальный порог рекурсивных вызовов.</b> (Например 100 раз).
+            </p>
+            <br>
+            <br>
+            <p>
+                Рекурсии бывают очень полезными при решении задач с вложенными структурами данных или в которых
+                вычисление
+                значения основывается на предыдущих вычислениях.
+            </p>
+            <p>
+                Примеры популярных задач на рекурсию:
+                <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%85%D0%BE%D0%B4_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0"><b>
+                    Обход дерева
+                </b></a>,
+                <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8"><b>
+                    Поиск числа фибоначчи
+                </b></a>,
+                <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB"><b>
+                    Поиск факториала числа N
+                </b></a>
+            </p>
+            <br>
+            <br>
+            <p>
+                <b>Важно!</b> В теории алгоритмов существует теорема согласной которой любой алгоритм, который
+                можно реализовать рекурсивно, с таким же успехом может быть реализован и итеративно, и наоборот.
+            </p>
+            <br>
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="MWwgpwN"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-recursion">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/MWwgpwN">
+  func-recursion</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <div class="image-description">
+                <img src="../images/recursion.jpg" alt="">
+                <div class="image-description-content">
+                    Мем про рекурсию. Кто еще не понял – загугли рекурсия и нажмите на Возможно вы имели ввиду...
+                </div>
+            </div>
+        </div>
+
+        <h3>Анонимная самовызвающаяся функция (IIFE)</h3>
+        <div class="subsection">
+            <p>Это функция немедленного вызвова – объявляется и тут же вызвается. (синтаксис ниже в примере.)</p>
+            <p>Такие функции нужны прежде всего для того, чтобы скрыть переменные в своей области видимости и
+                использовались
+                раньше для создания "модульности" кода.</p>
+        </div>
+        <div class="codepen-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result"
+               data-user="trostinsky"
+               data-slug-hash="ZEGzeQE"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="func-iife">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/ZEGzeQE">
+  func-iife</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2>Дополнительно почитать</h2>
+        <p>Это пригодится вам при выполнении домашнего задания</p>
+        <div class="subsection">
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">Методы строк</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_operators.asp">Операторы</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">Объект Math</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+</body>
+</html>

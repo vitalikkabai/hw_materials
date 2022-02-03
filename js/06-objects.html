@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Объекты</title>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Материалы по теме "Объекты"
+    </h1>
+    <section>
+        <h2>Что такое объект?</h2>
+        <p><b>Объект</b> – единственный составной тип в javascript'e. Объект позволяет сохранить множество значений в
+            виде пары: ключ -> значение.
+            Одна из разновидностей объекта – массивы, которые мы уже рассматривали.</p>
+        <br>
+        <p>Объект очень удобно представлять как ящик стола, внутри которого находятся подписанные папки (ключи/keys), в
+            которых в свою очередь лежит нужная нам информация (значения/values). (смм. <a
+                    href="https://learn.javascript.ru/object">подробнее</a>)</p>
+        <p>К свойствам объекта можно получить доступ с помощью двух разных синтаксисов:</p>
+        <p>
+            <br>
+            1) <code>object["property name"]</code> – при этом "property name" может быть абсолютно любой строкой,
+            числом или
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Symbol">символом</a>
+        </p>
+        <p>
+            <br>
+            2) <code>object.propertyName</code> – таким образом можно обращаться к свойствам объектов, только если они
+            соотвествуют
+            <a href="./01-variable-types.html#varibale_names">правилам названия переменных</a>.
+        </p>
+        <br>
+        <br>
+        <div class="image-description" style="margin: 0 auto; text-align:center;">
+            <img width="400" src="../images/objects.svg" alt="" class="img">
+            <p class="image-description-content" style="width: 100%; max-width: 1500px;">Иллюстрация объекта <code>let
+                user = {name: "test", age: "111", likeBirds: true }</code></p>
+        </div>
+        <br>
+        <br>
+        <p>Объекты явялются ссылочным типом данных, что означает их нельзя скопировать с помощью обычной инструкции
+            присвоения (прим. <code>let object2 = object1</code>).</p>
+        <br>
+        <p>
+            Что же такое <b>ссылочный тип данных</b>? Когда мы создаем объект с помощью литерала (прим. <code>{ key:
+            "value" }</code>)
+            и помещаем его в переменную происходит следующее:
+        </p>
+        <br>
+        <p><b>Javascript резервирует в памяти некое место под наш объект и получает ссылку на эту область памяти</b> ->
+            <br>
+            <br>
+            <b>Javascript резервирует место для обычной переменной</b> -> <br> <br>
+            <b>Javascript запишет в переменную ссылку на
+                место в памяти</b></p>
+        <br><br>
+        <p>Этот процесс необходим для того, чтобы быстро не закончилась оперативная память при выполнении какой-либо
+            программы.</p>
+        <br>
+        <p>У ссылочных типов данных есть несколько особенностей:</p>
+        <br>
+        <p>1) При присвоении ссылочного типа данных (объект <code>a</code>) в другую переменную (объект <code>b</code>)
+            копируется
+            <b>только ссылка на область в памяти</b>. Это значит что при изменении какого-либо из объектов – изменятся
+            оба.</p>
+        <br>
+        <p>2) Даже если мы очистим исходную переменную (<code>a = undefined;</code>), другая переменная (объект
+            <code>b</code>) сохранит значение</p>
+        <br>
+        <p>3) Если создать два объекта с одинаковыми свойствами – они получат разные ссылки на области памяти и не будут
+            равны. (<code>a === c -> false</code>)</p>
+        <br>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="poJgmwx"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="obejct-init">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/poJgmwx">
+  obejct-init</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Деструктуризация</h2>
+        <p>Из объектов можно легко получить переменные с помощью специального синтаксиса <b>деструктуризации</b>, она
+            позволяет одновременно создать переменные с таким же именем как свойства у объектов и присвоить переменным
+            значения свойства. (см. пример ниже с отличиями)</p>
+        <br>
+        <p>Точно так же, мы можем выполнять и обратный процесс, если нам нужно создать свойство объекта с таким же
+            именем и значением как и имя имеющейся у нас переменной.</p>
+        <br>
+        <p>В случае если мы хотим сохранить лишние свойства при деструктуризации, мы можем использовать оператор
+            <b>spread/rest</b> <code>let {name, age, ...other} = userObject;</code></p>
+        <br>
+        <p>Так же можно использовать <b>spread/rest</b> оператор – для вставки одного объекта в другой. (см. пример
+            ниже) </p>
+        <br>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="WNvrBZy"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="objects-desctruct">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/WNvrBZy">
+  objects-desctruct</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Методы для обработки объектов</h2>
+        <ul>
+            <li><code>Object.keys(object)</code> – получает все доступные ключи объекта в виде массива.</li>
+            <li><code>Object.values(object)</code> – получает все доступные значения объекта в виде массива.</li>
+            <li><code>Object.entries(object)</code> – получает все доступные ключи и значения объекта в виде массива из
+                массивов в котором ключ является первым элементом массива, а значение вторым.
+            </li>
+            <li><code>for(key in object)</code> – цикл для перебора ключей объекта.</li>
+        </ul>
+        <br>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="gOpPJox"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="objects-iterators">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/gOpPJox">
+  objects-iterators</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Методы объектов и контекст this</h2>
+        <p><b>Функция</b>, которая была сохранена как свойство объекта называется <b>методом объекта</b>. Методы
+            отличаются от функций тем, что метод объекта всегда имеет непосредственный доступ к свойствам текущего
+            объекта и может их изменять. (в том числе создавать новые свойства и методы, удалять их, метод даже может
+            удалить сам себя). </p>
+        <br>
+        <p>Методы объектов используются в <a
+                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">объекто-ориентированной
+            парадигме программирования</a> в javascript, её мы будем рассматривать подробно на следующих занятиях.</p>
+        <br>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="XWbXwVv"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="object-methods">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/XWbXwVv">
+  object-methods</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Promises</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме Promises
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+            </a></p>
+            <p>
+                <br>
+                <br>
+                Создайте функцию, которая возвращает промис <code>getRandomChinese(length)</code>. Функция работает следующим образом:
+                <br>
+                <br>
+                Запускается цикл(подсказка: можно использовать while) <code>length</code> раз, каждый проход цикла смотрим
+                на последние 5 цифр результата вызова метода <code>Date.now()</code> Например получили <code>const sign = 16086;</code>.
+                <br>
+                Конвертируем полученныую цифру в строку <code>String.fromCharCode(sign);</code> и ждем <code>50 ms</code>
+                <br>
+                Функция <code>gerRandomChinese(length)</code> должна вернуть строку длинной (length) с китайскими иероглифами.
+                Время работы промиса должно составлять <code>length * 50</code>ms.
+                <br>(Если вызвать <code>getRandomChinese(4)</code>, получим результат <code>"촛궻簽紙"</code> за <code>200ms</code>
+            </p>
+        </div>
+    </section>
+</div>
+</body>
+</html>

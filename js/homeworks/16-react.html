@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Классовые компоненты</title>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме: Классовые компоненты
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+                <br>
+                <a href="https://www.youtube.com/watch?v=F8s4Ng-re0E">Тут инструкции как это сделать с реактом</a>
+            </a></p>
+
+            <br>
+            <p>
+                Данные для домашки
+                <code>
+<pre>
+const contacts = [{
+        firstName: "Барней",
+        lastName: "Стинсовский",
+        phone: "+380956319521,
+        gender: "male"
+    }, {
+        firstName: "Робин",
+        lastName: "Щербатская",
+        phone: "+380931460123,
+        gender: "female"
+    }, {
+        firstName: "Аномный",
+        lastName: "Анонимус",
+        phone: "+380666666666
+    }, {
+        firstName: "Лилия",
+        lastName: "Олдровна",
+        phone: "+380504691254,
+        gender: "female"
+    }, {
+        firstName: "Маршэн",
+        lastName: "Эриксонян",
+        phone: "+380739432123,
+        gender: "male"
+    }, {
+        firstName: "Теодор",
+        lastName: "Мотсбэс",
+        phone: "+380956319521,
+        gender: "male"
+    }];
+
+</pre>
+                </code>
+            </p>
+            <p>
+                <b>Задание Basic: </b> <br>
+                На выходе у вас должен получится копомнент <code>Contracts</code>, который работает с логикой (state)
+                и компонент <code>Contract</code>, который просто отображает номер телефона, имя и фамлиию контакта.
+            </p>
+            <ol>
+                <li>Отобразить список контактов (можно по дизайну ориентироваться на iOS/Android контакты)</li>
+                <li>Добавить поле поиска перед списком.</li>
+                <li>При вводе текста в поле поиска – фильтровать по фамилии пользователя.
+                    <br>(Т.е если в поле ввести "эриксон" – отобразится только контакт Маршен Эриксонян"
+                </li>
+            </ol>
+            <p>
+                Так же небольшой план, который поможет сделать правильно домашнее задание
+            <ol>
+                <li>Создаем проект с помощью CRA</li>
+                <li>Создаем компонент <code>Contracts</code>. (Делаем классовый или функциональный с хуками)</li>
+                <li>Добавляем в <code>state</code> массив <code>contacts </code> Учтите, contacts нужно добавить внутрь
+                    объекта state (!). Чтобы можно было обращатсья как <code>state.contacts</code></li>
+                <li>Пишем метод <code>render</code> для отрисовки данных из <code>state</code>. На этом этапе можно
+                    отобразить хотя бы имена
+                </li>
+                <li>Создаем компонент <code>Contact</code>. Делаем необходимую верстку</li>
+                <li>Из <code>props</code> достаем необходимые данные и размещаем их в верстке <code>(firstName,
+                    lastName, phone, gender)</code></li>
+                <li>В компоненте <code>Contacts</code> – добавьте в рендере массива – компонент <code>Contact</code>.
+                    Вы можете передать все значения из элемента вашего массива <code>state.contacts</code> с помощью
+                    spread оператора. <code>{...contact}</code>
+                </li>
+                <li>Дорабатываем стилизацию, исправляем верстку если необходимо</li>
+                <li>Добавляем поле ввода (input) перед списком контактов</li>
+                <li>В <code>state</code> добавляем еще одно значение <code>search</code></li>
+                <li>Выводим в value аттрибут инпута значение из <code>state.search</code></li>
+                <li>Добавляем обработчик события <code>onChange</code> у инпута. Функция обработки события(handleSearchChange) –
+                    должна менять <code>state.search </code>
+                    на основании <code>event.target.value</code></li>
+                <li>Теперь вы можете добавить логику в функцию <code>handleSearchChange</code>.
+                    Вам необходимо брать исходный массив <code>contacts</code>
+                    и отфильтровав его с помощью функции <code>filter</code> – поместить в <code>state</code>
+                </li>
+            </ol>
+            </p>
+            <p>
+                <b>Задание Advanced: </b> <br>
+            <ol>
+                <li>Добавьте иконку пола к контактам(<a
+                        href="https://www.flaticon.com/free-icon/mars_1340619?term=male&page=1&position=8">М</a>, <a
+                        href="https://www.flaticon.com/free-icon/female_766514?term=female&page=1&position=7">Ж</a>)</li>
+                <li>Сделайте так, чтобы поиск фильтровал по имени/фамилии/номеру.
+                    <br> Например: в поле поиска введено "95" – мы увидим контакты Барнея и Теодора
+                    <br> Например: в поле поиска введено "он" – мы увидим Анонимуса и Эриксоняна
+                </li>
+                <li>
+                    Добавьте чекбоксы с полом(м, ж, не указан).
+                    По умолчанию все включены. При отключении чекбокса – происходит фильтрация.
+                    <br> Например: указаны чекбоксы м и не указан – мы увидим Барнея, Теодора, Маршена и Анонимуса
+                    <br> Например: указаны чекбоксы ж и не указан – мы увидим Лилию, Робин и Анонимуса
+                    <br> Например: указаны чекбоксы м и ж – мы увидим Лилию, Робин, Барнея, Теодора, Маршена
+                    <br> Например: указан чекбокс не указаны – мы увидим Анонимусы
+                </li>
+            </ol>
+            </p>
+        </div>
+    </section>
+</div>
+</body>
+</html>

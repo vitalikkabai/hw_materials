@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>01-GIT</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<h1>
+    Матеріали по темі GIT
+</h1>
+<section>
+    <h2>Що таке система контролю версій (CVS)</h2>
+    <p>CVS — це система, яка зберігає зміни в одному або кількох файлах так, щоб потім можна було відновити певні старі
+        версії.
+    </p>
+    <p>
+        За допомогою таких систем, розробники можуть співпрацювати один з одним, не хвилюючись щодо проблем або
+        невідповідностям в файлах.
+    </p>
+    <p>
+        Всі напрацювання по проекту завжди зберігаються у нас, і ми в будь-який момент можемо повернутися до старої
+        версії або навіть скомбінувати різні рішення різних версій.
+    </p>
+    <div class="subsection">
+        <h3>Простой пример CVS</h3>
+        <div class="image-description">
+            <img src="./images/cvs-1.png" alt=""/>
+            <p class="image-description-content">
+                Мы копируем файлы текущего проекта, указывая дату и время  создания копии, такой подход еще называют
+                backup’ом,
+                или более развитые – локальные системы контроля версий
+            </p>
+        </div>
+    </div>
+
+    <div class="subsection">
+        <h3>Центральные системы контроля версий</h3>
+        <div class="image-description">
+            <img src="./images/cvs-2.png" alt=""/>
+            <p class="image-description-content">
+                В общем случае, делают то же что и локальные системы контроля версий, но на удаленном сервере. 
+                Самый известный и до сих пор используемый пример ЦСУВ – Subversion(SVN)
+            </p>
+        </div>
+    </div>
+
+    <div class="subsection">
+        <h3>Распределенные системы управления версиями</h3>
+        <div class="image-description">
+            <img src="./images/cvs-3.png" alt=""/>
+            <p class="image-description-content">
+                Примеры таких систем: <b>git, mercurial, bazaar, darcs</b>
+                <br/>
+                Основное отличие таких систем в том, что клиенты, всегда забирают полную копию репозитория себе.
+                Благодаря такому подходу, даже если сервер потеряет все данные, их можно моментально скопировать у
+                кого-либо
+                из
+                клиентов и все снова заработает как нужно. Уничтожить данные из такой системы случайно практически
+                невозможно.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Установка GIT</h2>
+    <p>
+        <a href="https://git-for-windows.github.io">
+            Для Windows: https://git-for-windows.github.io
+        </a>
+    </p>
+    <p>
+        <a href="https://sourceforge.net/projects/git-osx-installer/">
+            Для MacOS: https://sourceforge.net/projects/git-osx-installer/
+        </a>
+    </p>
+    <p class="image-description">
+        Ми рекомендуємо встановлювати розширення git bash, як окрему програму. Щоб ви не плутались з терміналом Windows.
+    </p>
+</section>
+
+<section>
+    <h2>Настройка Git</h2>
+    <p class="image-description">
+        Зазвичай виконується одноразово
+    </p>
+    <ol>
+        <li>Перевіряємо, чи працює git. Відкриваємо git bash</li>
+        <li>Вводимо в консоль команду git</li>
+        <li>Тепер вказуємо наше ім'я та пошту, які будуть видимі при коміті в репозиторій
+        </li>
+        <li>Перевіряємо, чи вказані наше ім'я та пошта</li>
+    </ol>
+    <pre class="prettypring lang-sh">
+$ git config --global user.name "Your Name"
+$ git config --global user.email your@email.com
+$ git config —-list
+ИЛИ
+$ git config user.name
+     </pre>
+</section>
+<section>
+    <h2>GitHub и BitBucket</h2>
+    <p>Це хостинги для віддалених репозиторіїв. Або інакше – місце, де можна розташувати віддалений репозиторій. </p>
+    <p>У обох платформ є подоба соціальних мереж,
+        можемо створювати команди та працювати над проектами
+        з повною підтримкою pull request та issue</p>
+    <p>У кожної платформи є свої плюси або мінуси, але обидві ці платформи працюють з гітом, та нам абсолютно не важливо
+        де ми розміщуємо код. </p>
+    <div class="image-description">
+        <img src="./images/cvs-6.png" alt="">
+        <p class="image-description-content">Различия платформ</p>
+    </div>
+    <div class="subsection">
+        <h3>Ми з Вами будемо використовувати GitHub</h3>
+        <p>
+            Зареєструйтесь або увійдіть під своїм обліковим записом на сайт <a href="https://github.com">https://github.com</a>
+            Після цього, створіть новий репозиторій.
+            <br>
+            У нас з'явилась сторінка з описом як підключити наш репозиторій.
+        </p>
+    </div>
+    <div class="subsection">
+        <h3>Команди, які використовуються у терміналі</h3>
+        <ul>
+            <li>
+                <b>git add . </b> – додаємо файли в коміт. Зазвичай використовується <b>«.»</b> або <b>«*»</b> для
+                додавання усіх файлів. Щоб додати один файл – вказуємо його <i>ім'я та розширення</i>.
+            </li>
+            <li>
+                <b>git commit <i>-m "Повідомлення, яке описує комміт"</i></b> – За допомогою цієї команди ми виконуємо
+                «коміт» змін. Тобто, вказуємо, що поточний зліпок проекту потрібно зберегти. Можна вказати без аргументу
+                -m, в такому випадку відкриється текстовий редактор по замовчуванню, в якому потрібно буде описати
+                коміт.
+                <i>Якщо це сталось випадково, вводите :q і натискаєте Enter</i>
+            </li>
+            <li>
+                <b>git push <i>origin master</i></b> – Пушим» або відправляємо в репозиторій наші зміпки проекту. <i>origin</i>
+                – назва віддаленого репозиторію (зазвичай вибирають <i>origin</i>, але в теорії може бути будь-яке
+                слово) master
+                – назва гілки в яку додаємо зміни (master – головна гілка у репозиторії, може бути будь-якою)
+            </li>
+            <li>
+                <b>git init <i>./</i></b> – ніціює пустий репозиторій в поточній директорії.
+                Так само можна вказати будь-який шлях.
+            </li>
+            <li>
+                <b>git remote add <i>origin URL</i></b> – Додаємо адресу віддаленого репозиторію, в якому будемо пушити
+                зміни origin – назва віддаленого репозиторію (зазвичай вибирають origin,але в теорії може бути будь-яке
+                слово)
+            </li>
+            <li>
+                <b>git pull <i>origin master</i></b> – команда для отримання змін з репозиторію.
+            </li>
+        </ul>
+        <div class="image-description">
+            <img src="./images/cvs-5.png" alt="">
+            <p class="image-description-content">
+                Схематическая разница команд при сохранении изменений
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Додаткові матеріали</h2>
+    <ul>
+        <li>
+            <a href="https://www.youtube.com/watch?v=XSKdff6jLRg">
+                Видео про GitDesktop
+            </a>
+        </li>
+        <li>
+            <a href="https://github.github.com/training-kit/downloads/ru/github-git-cheat-sheet/">
+                Шпаргалка github
+            </a>
+        </li>
+        <li>
+            <a href="http://rogerdudler.github.io/git-guide/index.ru.html">
+                Короткий туториал
+            </a>
+        </li>
+        <li>
+            <a href="https://githowto.com/uk">
+                Хороший туториал, но много лишнего, фильтруйте
+            </a>
+        </li>
+        <li>
+            <a href="https://learngitbranching.js.org/">
+                Интерактивный туториал. Заходить после того как разберетесь с основными параметрами.
+            </a>
+        </li>
+        <li>
+            <a href="https://backlog.com/git-tutorial/what-is-git/">
+                Хороший туториал на английском
+            </a>
+        </li>
+        <li>
+            <a href="https://pages.github.com/">
+                Github Pages
+            </a>
+        </li>
+        <li>
+            <a href="https://git-scm.com/docs">
+                Git documentation
+            </a>
+        </li>
+        <li>
+            <a href="https://git-scm.com/book/uk/v2">
+                Pro git book in ukr
+            </a>
+        </li>
+    </ul>
+</section>
+</body>
+</html>

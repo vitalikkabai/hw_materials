@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Прототипы. ES6 классые</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме "Прототипы. ES6 классы"
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+            </a></p>
+            <p>
+                В этом задании вам необходимо создать класс <code>Student</code> и разрабатывать методы внутри этого
+                класса.
+            </p>
+            <ol>
+                <li>
+                    У стдентов должны быть следующие свойства: <code>university, course, fullName</code>, они передаются
+                    при создании студента(в конструктор).
+                </li>
+                <li>
+                    Создайте метод <code>this.getInfo() -> "Студент 1го курса Высшей Школы Мошенничества г.Одесса, Остап
+                    <s>Родоманський</s> Бендер"</code>, метод возвращает совокупную информацию о курсе, учебном заведении и имени студента.
+                </li>
+                <li>
+                    Создайте геттер оценок <code>this.marks</code>, который возвращает массив оценок студента <code>[5,
+                    4, 4, 5]</code>
+                </li>
+                <li>
+                    Создайте сеттер оценок <code>this.marks = 5</code>, который позволяет поставить оценку студенту.
+                    После того, как оценка поставлена, геттер должен вернуть массив <code>this.marks -> [5, 4, 4, 5,
+                    5]</code>
+                </li>
+                <li>
+                    Создайте метод получения среднего балла <code>this.getAverageMark() -> 4.6</code>
+                </li>
+                <li>
+                    Создайте метод <code>this.dismiss</code>, который "исключит" студента. После вызова этого метода –
+                    ставить студенту оценки и получать их больше нельзя. (Никаких ошибок, просто возвращается всегда
+                    null вместо массива оценок)
+                </li>
+                <li>
+                    Создайте метод <code>this.recover</code>, который позволит восстановить студента
+                </li>
+            </ol>
+            <br/>
+            <p><b>Advanced</b></p>
+            <ol>
+                <li>Создайте новый класс <code>BudgetStudent</code>, который полностью наследует класс
+                    <code>Student</code></li>
+                <li>
+                    Бюджетный студент может получать стипендию с помощью метода <code>this.getScholarship</code>.
+                    Получение стипендии сопровождается выводом информации в консоль: <code>Вы получили 1400 грн.
+                    стипендии</code>
+                </li>
+                <li>
+                    Метод получения стипендии автоматически вызывается каждые 30 секунд после создания объекта.
+                    Подсказка: вызывайте его в <code>constructor</code>
+                </li>
+                <li>
+                    Студент получает стипендию только в том случае, если средний балл у него выше или равен 4.0
+                </li>
+                <li>
+                    Если студент исключен, он не получает стипендию (думаю это было и так очевидно :) )
+                </li>
+            </ol>
+        </div>
+    </section>
+</div>
+</body>
+</html>

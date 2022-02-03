@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Функции</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме Функции
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+            </a></p>
+            <br/>
+            <p>
+                В этом домашнем задании вам необходимо сделать <b>минимум 6 функций</b> (на выбор)
+            </p>
+            <br>
+            <p class="importnant">(!) В функциях <b>не нужно выводить никаких данных</b>, они должны быть чистыми, по возможности.
+                После чего в конце ДЗ нужно обернуть вызов ваших функций в <code>console.log</code>
+                или <code>document.writeln</code>.
+                <br>
+                Пример: Ваша функция объявлена где-то <code>const myFunc = () => { ...}</code>, в конце вашего ДЗ вы
+                выводите результат вызова <code>document.writeln(`Функция №1: ${myFunc("аргументы, если есть")}`)</code>
+            </p>
+            <ol>
+                <li>Создать функцию <code>getMaxDigit(number)</code> – которая получает любое число и выводит самую
+                    большую
+                    цифру в этом числе. Примеры: 1236 -> 6, 987 -> 9, 385 -> 8
+                </li>
+                <li>
+                    Создать функцию, которая вычисляет степень числа. <b>Не используя <code>Math.pow</code> и
+                    <code>**</code></b>. <i>Используйте цикл</i>
+                </li>
+                <li>
+                    Создать функцию, которая форматирует имя, делая первую букву заглавной. ("влад" -> "Влад", "вЛАД" ->
+                    "Влад" и так далее);
+                </li>
+                <li>
+                    Создать функцию, которая вычисляет сумму оставшуюся после оплаты налога от заработной платы. (Налог
+                    =
+                    18% + 1.5% -> 19.5%). Пример: 1000 -> 805
+                </li>
+                <li>
+                    Создать функцию, которая возвращает случайное целое число в диапазоне от N до M. Пример:
+                    <code>getRandomNumber(1, 10) -> 5</code>
+                </li>
+                <li>
+                    Создать функцию, которая считает сколько раз определенная буква повторяется в слове. Пример: <code>countLetter("а",
+                    "Асталависта") -> 4</code>
+                </li>
+                <li>
+                    Создайте функцию конвертиующую доллары в гривны и наоборот в зависимости от наличия символа $ или
+                    UAH в
+                    строке. Пример: <code>convertCurrency("100$") -> 2500 грн.</code> или <code>convertCurrency("2500UAH")
+                    -> 100$</code>
+                    <br> Учтите, другие валюты не конвертируются, нужно выводить ошибку, а так же регистр <b>uah</b> не
+                    имеет значения.
+                </li>
+                <li>
+                    Создайте функцию генерации случайного пароля (только числа), длинна устанавливается пользователем
+                    или по
+                    умолчанию = 8
+                    символам.
+                    <br>
+                    Пример: <code>getRandomPassword(4) -> 1875</code>, <code>getRandomPassword() -> 87240124</code>
+                </li>
+                <li>
+                    Создайте функцию, которая удаляет все буквы из предложения. Пример: <code>deleteLetters('a',
+                    "blablabla") -> "blblbl"</code>
+                </li>
+                <li>
+                    Создайте функцию, которая проверяет является ли слово <a
+                        href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC">палиндромом</a>.
+                    Пример: <code>isPalyndrom("мадам") -> true</code>, <code>isPalyndrom("кокос") -> false</code>, <code>isPalyndrom("Аргентина манит негра") -> true</code>
+                </li>
+                <li>Создайте функцию, которая удалит из предложения буквы, которые встречаются более 1 раза. Пример: <code>deleteDuplicateLetter("Бисквит был очень нежный") -> "сквтлчьжй"</code></li>
+            </ol>
+        </div>
+    </section>
+</div>
+</body>
+</html>

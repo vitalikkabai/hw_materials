@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Методы жизненного цикла и хуки</title>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме: Методы жизненного цикла и хуки
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+                <br>
+                <a href="https://www.youtube.com/watch?v=F8s4Ng-re0E">Тут инструкции как это сделать с реактом</a>
+            </a></p>
+            <br>
+            <p>
+                <b>Задание Basic: </b> <br>
+                Ваша основная задача в этом домашнем задании: сделать таймер обратного отсчёта.
+                <br>
+                Компонент <code>&lt;Timer /&gt;</code>
+                <a href="https://youtu.be/Mxo0RE_bJO4">Пример того что должно быть</a>
+            </p>
+            <ol>
+                <li>
+                    Таймер должен получать props <code>time</code> – время с которого начинается отсчёт
+                </li>
+                <li>
+                    У таймера должны быть кнопка start/pause. При нажатии на которую соответственно таймер либо ставится
+                    на паузу, либо запускается снова
+                </li>
+                <li>
+                    Должен быть props autostart автоматического запуска. Если указан true – таймер запускается сам.
+                    (componentDidMount может вам в этом помочь)
+                </li>
+                <li>
+                    В компонент
+                    <code>&lt;Timer onTick={(time) => console.log("Осталось времени: " + time)} /&gt;</code>
+                    можно передавать функцию <code>onTick</code>, которая срабатывает при каждом "тике" таймера.
+                </li>
+                <li>
+                    Добавьте props <code>step</code>, который позволит передать интервал обновления таймера.
+                    Например раз в 1 секунду/100 мс/2с/10с. Обратите внимание на видео – нижний таймер меняется каждые 2
+                    секунды. <b>Все значения времени у таймера указаны в мс</b>
+                </li>
+                <li>
+                    Длина полоски уменьшается с движением таймера(анимацию советую сделать потом отдельно, она в этом
+                    задании НЕОБЯЗАТЕЛЬНА)
+                </li>
+            </ol>
+            <br>
+
+            <p>
+                <b>Задание Advanced: </b> <br>
+            <ol>
+                <li>
+                    Добавьте событие <code>onTimeEnd</code>, передается как <code>&lt;Timer onTimeEnd={() =>
+                    console.log("Время вышло!")} /&gt;</code>
+                </li>
+                <li>
+                    Добавьте событие <code>onTimeStart</code>, передается как <code>&lt;Timer onTimeStart={(timeLeft) =>
+                    console.log("Таймер запущен!")} /&gt;</code>
+                </li>
+                <li>
+                    Добавьте событие <code>onTimePause</code>, передается как <code>&lt;Timer onTimePause={(timeLeft) =>
+                    console.log("Таймер на паузе!")} /&gt;</code>
+                </li>
+                <li>
+                    *Задание со звездочкой или даже с несколькими*
+                    <br>
+                    Если изменяется внешний props <code>time</code> – ваш таймер должен отрегировать.
+                    <br>
+                    Давайте рассмотрим такую задачу.
+                    <br>
+                    У нас есть компонент таймера (предполагается что все предыдущие пункты ДЗ выполнены). Необходимо
+                    чтобы он был бексонечным.
+                    Как только время закончится – запускаем таймер по новой.
+                    Ниже прикреплен пример использования такого таймера с логикой. Ваша задача доработать только
+                    компонент Timer.
+                </li>
+            </ol>
+            </p>
+            <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js"
+               data-user="trostinsky" data-slug-hash="abOrmyo"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="abOrmyo">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/abOrmyo">
+  abOrmyo</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <title>JS: Переменные и типы данных</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+<h1>
+    Материалы по теме "Типы данных и переменные"
+</h1>
+<section>
+    <h2>Переменные</h2>
+    <p>
+        Переменная – псевдоним для ячейки памяти, в котором хранятся некоторые данные.
+    </p>
+    <p>
+        Переменные нужны для того, чтобы мы имели возможность использовать и изменять некоторые значения множество раз.
+    </p>
+    <h3>Создание переменной</h3>
+    <p>
+        Существует два основных способа создавать переменную: ключевые слова <b>let</b> и <b>const</b>.
+    </p>
+    <ul>
+        <li>
+            <i>let</i> – Создает переменную, которую нельзя использовать до её объявления ниже по коду, в любой
+            момент
+            можно изменить, а так же удалить.
+        </li>
+        <li>
+            <i>const</i> – Создает переменную, которую нельзя использовать до её объявления ниже по коду и нельзя
+            изменить.
+        </li>
+        <li>
+            Есть и третий способ создания переменной с помощью ключевого слова <i>var</i>, этот способ использовался
+            в
+            старых версиях ECMAScript до ES6.
+        </li>
+    </ul>
+    <div class="codepen-wrapper">
+
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+           data-slug-hash="eYmoXZp"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="eYmoXZp">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/eYmoXZp">
+  eYmoXZp</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </div>
+    <h3 id="varibale_names">Имена переменных</h3>
+    <ul>
+        <li>Переменные содержат только латинские буквы(a-zA-Z) и арабские цифры(0-9)</li>
+        <li>Переменные не могут начинаться с цифры</li>
+        <li>Переменные могут содержать символы <b>$</b> и <b>_</b></li>
+        <li>Переменные нужно называть простыми и понятными словами, показывающими, что содержит переменная</li>
+        <li>Для разделения нескольких слов в названии переменной нужно использовать "camelCase"</li>
+    </ul>
+    <div class="codepen-wrapper">
+
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+           data-slug-hash="LYEvayz"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="LYEvayz">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/LYEvayz">
+  LYEvayz</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </div>
+    <h3>Константы</h3>
+    <p>
+        Для констант так же существует несколько простых правил
+    </p>
+    <ul>
+        <li>
+            Если вы не планируете изменять переменную можете создавать её через <i>const</i>, в последствии, когда
+            захотите ниже её изменить, нужно будет лишь указать <i>let</i>. Такой подход позволит вам легко
+            ориентироваться какие переменные заданы один раз, а какие изменяются ниже в коде.
+        </li>
+        <li>
+            Если вы создаете единое и никогда неизменяемое значение для вашего приложения, называйте такие константы
+            в верхнем регистре через _
+        </li>
+    </ul>
+    <div class="codepen-wrapper">
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+           data-slug-hash="ZEYZPoO"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="constants">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/ZEYZPoO">
+  constants</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </div>
+</section>
+<section>
+    <h2>Типы данных</h2>
+    <p>Всего в Javascript существует 5 примитивных типов данных.</p>
+    <ul>
+        <li>Числа</li>
+        <li>Строки</li>
+        <li>Булевые</li>
+        <li>undefined</li>
+        <li>null</li>
+    </ul>
+    <div class="subsection">
+        <h3>Числа</h3>
+        <p>
+            Существует несколько способов создать число
+        </p>
+        <div class="codepan-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js"
+               data-user="trostinsky" data-slug-hash="wvBZObw"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="numbers">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/wvBZObw">
+  numbers</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+    </div>
+    <div class="subsection">
+        <h3>Строки</h3>
+        <p>
+            Есть три способа создать строку
+        </p>
+        <ul>
+            <li>С помощью одинарных кавычек</li>
+            <li>С помощью двоичных кавычек</li>
+            <li>С помощью обратных кавычек создаются шаблонные строки.</li>
+        </ul>
+        <div class="image-description">
+            Шаблонные строки имеют преимущество перед другими способами создания строки – в них можно подставлять
+            переменные, переносить строки и использовать одинарные и двойные кавычки без помех
+        </div>
+        <div class="codepan-wrapper">
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+               data-slug-hash="gObyEVJ"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="strings">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/gObyEVJ">
+  strings</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+        </div>
+    </div>
+    <div class="subsection">
+        <h3>Булевые значения</h3>
+        <p>Булевые значения могут быть двух видов <i><b>true</b></i> или <i><b>false</b></i>. Используются обычно для
+            создания логики программы с помощью условных конструкций</p>
+    </div>
+
+    <div class="subsection">
+        <h3>undefined</h3>
+        <p>Такое значение получает переменная, если не указать ей значение при создании. Так же при удалении переменной
+            – она примет это значение.</p>
+    </div>
+    <div class="subsection">
+        <h3>null</h3>
+        <p>Нет значения или нет объекта. Отличается от <b><i>undefined</i></b>, тем, что <b><i>null</i></b> – мы задаем
+            специально, что указать что объекта нет ОСОЗНАННО</p>
+        <div class="image-description">
+            Обратите внимание, что выражение <b><i>typeof null</i></b> всегда возвращает строку <b>"object"</b>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Операторы</h2>
+    <p>В JS существует множество операторов для работы с переменными и литералами. Они могут быть унарными(работают с
+        одним значеним), бинарными(работают с двумя значениями), тернарный опеатор(он всего-лишь один)</p>
+    <ul>
+        <li>Оператор присвоения <b>=</b> – не равно, как в математике, а присвоить значение</li>
+        <li>Математические операторы (+, -, /, *)</li>
+        <li>Операторы сравнения (===, !==, &gt;, &lt; и другие.)</li>
+        <li>delete – удалить переменную или свойство объекта</li>
+        <li>typeof – возвращает тип переменной</li>
+        <li>instanceof – используется для проверки наследования прототипа (12 занятие)</li>
+    </ul>
+    <div class="codepen-wrapper">
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+           data-slug-hash="oNgOOem"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="operators">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/oNgOOem">
+  operators</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </div>
+</section>
+<section>
+    <h2>Вывод данных</h2>
+    <ul>
+        <li><i><b>console.log(variable)</b></i> – Предпочтительный способ вывести переменную для отладки или проверки
+            значения. Вывод происходит в специальную console, которая является частью инструментов разработки Google
+            Chrome
+        </li>
+        <li><i><b>alert(variable)</b></i> – Показывает окно пользователю и блокирует выполнение дальнейшего кода. Удобно
+            использовать для обработки ошибок, чтобы уведомить пользователя о неправильной работе или неполный данных
+        </li>
+        <li><i><b>document.writeln(variable)</b></i> – вставляет значение переменной напрямую в HTML. Можно использовать
+            для того, чтобы выводить данные для пользователей. (Не рекомендуется использовать в production)
+        </li>
+    </ul>
+    <div class="codepan-wrapper">
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="KKwYYby"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="KKwYYby">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/KKwYYby">
+  KKwYYby</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </div>
+</section>
+<section>
+    <h2>Объект Math</h2>
+    <p>Для работы с математикой у JS есть встроенный объект, который реализует основные функции по вычислению</p>
+    <ul>
+        <li><b>Math.floor(number)</b> – округление в меньшую сторону</li>
+        <li><b>Math.trunk(number)</b> – отбросить дробную часть</li>
+        <li><b>Math.ceil(number)</b> – округлить в большую сторону</li>
+        <li><b>Math.round(number)</b> – округлить как обычно</li>
+        <li><b>Math.abs(number)</b> – вернет модуль числа</li>
+        <li><b>Math.cos(number)</b> – косинус числа. (Доступны так же другие тригонометрические функции)</li>
+        <li><b>Math.sqrt(number)</b> – Квадратный корень числа</li>
+        <li><b>Math.cbrt(number)</b> – Кубический корень числа</li>
+        <li><b>Math.random()</b> – Случайное число с плавающей точкой в диапазоне от 0 до 1</li>
+        <li><b>Math.max(...numbers)</b> – Максимум из набора переданных чисел</li>
+        <li><b>Math.min(...numbers)</b> – Минимум из набора переданных чисел</li>
+        <li><b>Math.pow(x, y)</b> – Возводит x в степень y</li>
+    </ul>
+    <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+       data-slug-hash="PowggMb"
+       style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+       data-pen-title="math">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/PowggMb">
+  math</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+</section>
+<section>
+    <h2>Google Chrome Dev Tools</h2>
+    <ul>
+        <li>В Google Chrome Dev Tools можно войти нажав кнопку <b>F12</b> на Windows или нажав <b>Cmd + Alt + I</b> на
+            MacOS
+        </li>
+        <li>Чтобы проверить загруженные файлы – откройте вкладку Network</li>
+        <li>Во вкладке console – можно видеть результат вызова console.log в коде, а так же писать javascript код</li>
+        <li>Elements – вкладка для работы с HTML/CSS</li>
+        <li>Perfomance/Memory/Application – нужны для работы с оптимизацией нашего кода</li>
+    </ul>
+    <div class="image-description">
+        <img src="../images/chrome-dev-tools.png" alt="">
+        <p class="image-description-content">Google Chrome Dev Tools</p>
+    </div>
+</section>
+</body>
+</html>

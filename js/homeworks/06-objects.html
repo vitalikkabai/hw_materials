@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Объекты</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме Объекты
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+            </a></p>
+            <p>
+                В этом домашнем задании, вы будете работать с массивом объектов.
+            </p>
+            <p>Для начала необходимо создать следующий массив (вы можете его просто скопировать):
+            </p>
+            <br>
+            <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js" data-user="trostinsky"
+               data-slug-hash="poJgqPw"
+               style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+               data-pen-title="objects-hw">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/poJgqPw">
+  objects-hw</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <br>
+            <ol>
+                <li>
+                    Создайте функцию <code>getSubjects(students[0] --> ["Math", "Algorithms", "Data science"]</code> -
+                    которая возвращает список предметов для конкретного студента. Обратите внимание – название предмета
+                    необходимо возвращать с большой буквы, а <code>_</code> – заменить на пробел
+                </li>
+                <li>Создайте функцию <code>getAverageMark(students[0]) --> 3.79</code> – которая вернёт среднюю
+                    оценку по всем предметам для переданного студента <b>НЕ МАССИВА СТУДЕНТОВ</b>. Оценку округлите до
+                    2ого знака. Можно использовать функции написанные в предыдущих домашних заданиях :)
+                </li>
+                <li>
+                    Создайте функцию <code>getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya",
+                    "averageMark": 3.79}</code> – которая возвращает информацию общего вида по переданному студенту (вам
+                    пригодится функция из предыдущего задания). Должна быть выведена информация: курс, имя, средняя
+                    оценка.
+                </li>
+                <li>
+                    Создайте функцию <code>getStudentsNames(students) --> ["Anton", "Tanya, "Victor"]</code> – которая
+                    возвращает имена студентов в алфавитном порядке.
+                </li>
+                <li>
+                    Создайте функцию <code>getBestStudent(students) --> "Anton"</code> – которая возвращает лучшего
+                    студента из списка по показателю средней оценки.
+                </li>
+                <li>
+                    Создайте функцию <code>calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 }</code> – которая возвращает объект, в котором ключи это буквы в слове, а значения – количество их повторений.
+                </li>
+            </ol>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            <br/>
+        </div>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Переменные и типы данных</title>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Материалы по теме "Массивы"
+    </h1>
+    <section>
+        <h2>Что такое массив</h2>
+        <p><b>Массив</b> – разновидность объектов в Javascript, в котором элементы хранятся в упорядоченом списке. <i>(Например:
+            1 -> "хлеб", 2 -> "молоко", 3 -> "капуста")</i></p>
+        <br>
+        <p>Массивы нужны для того, чтобы можно было хранить связанные данные рядом и работать с ними одновременно.
+            Хорошими примерами данных, которые можно сохранить в массиве будут: <b>
+                список продуктов, список студентов, названия городов, полученные ответы в результате опроса
+            </b></p>
+        <br>
+        <p>Массив может хранить в себе что угодно, в том числе объекты, массивы или функции.</p>
+        <p><b>Массивы, которые хранят другие массивы называют многомерными</b>.</p>
+        <p>Существует ряд задач, в которых необходимо работать с многомерными массивами.</p>
+        <br>
+        <p><b>Длинну массива</b> можно получить с помощью свойства <code>array.length</code>(array – это наш массив).
+            Это свойство показывает сколько в данный момент в массиве существует элементов.</p>
+        <br>
+        <p>Важно помнить, что массивы(и объекты), в отличии от простых типов данных – являются <b>ссылочными</b>. То
+            есть, в переменной лишь хранится ссылка на место в памяти где лежит массив, а не сам массив.</p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="JjddOQz"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="createArray">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/JjddOQz">
+  createArray</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Базовые операции над массивами</h2>
+        <ul>
+            <li><p><b>Создание массива</b> можно выполнить с помощью конструкции <code>new Array(n)</code>, где
+                <code>n</code> –
+                длинна массива или с помощью литерала массивов <code>[1, 2, 3]</code>.</p>
+                <p>В случае если передать в конструктор <code>new Array(1, 2, 3)</code> – несколько аргументов,
+                    создастся
+                    массив
+                    из переданных аргументов.</p>
+                <p>Так же массив можно создать из любых перечисляемых объектов с помощью метода
+                    <code>Array.from(obj)</code>.
+                </p>
+            </li>
+            <li>
+                <p><b>Добавить элемент в конец массива</b> можно с помощью метода <code>.push(element)</code>.
+                    Результатом
+                    выполнения этого метода будет новая длинна массива.</p>
+            </li>
+            <li>
+                <p><b>"Вытащить" последний элемент</b> из массива можно с помощью метода <code>.pop()</code>.
+                    Результатом
+                    выполнения этого метода будет последний элемент массива, при этом длинна массива уменьшится и
+                    элемент
+                    больше
+                    не будет частью исходного массива.</p>
+            </li>
+            <li>
+                <p><b>Добавить элемент в начало массива</b> можно с помощью метода <code>.unshift(element)</code></p>
+            </li>
+            <li>
+                <p><b>Убрать элемент из начала массива</b> можно с помощью метода <code>.shift(element)</code></p>
+            </li>
+        </ul>
+        <p>Важно помнить, что операции с началом массива перестраивают весь массив, поэтому <b>работают дольше и требуют
+            больше ресурсов</b>, чем операции в конце массива.</p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky" data-slug-hash="zYGGpOM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="arraysOperations">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/zYGGpOM">
+  arraysOperations</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Перебор массива</h2>
+        <p>Перебрать массивы можно с помощью циклов: <code>for</code> и <code>for of</code>(Предпочтительнее
+            использовать этот).</p>
+        <p>Так же существуют методы для перебора массива: <code>.map(), .forEach()</code> – они будут рассмотрены в <a
+                href="./05-arrays-methods.html">следующей теме</a>.</p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky" data-slug-hash="ExjjoxG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="eachArray">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/ExjjoxG">
+  eachArray</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+    <section>
+        <h2>Другие операции над массивами</h2>
+        <p>Так как массивы являются ссылочными типами данных, очень важно понимать какой метод изменяет исходный массив,
+            а какой метод возвращает новый.</p>
+        <br>
+        <p>Рассмотрим несколько других полезных методов при работе с массивами:</p>
+        <ul>
+            <li><b>Проверка вхождения в массив</b> – <code>.includes(element)</code>, данный метод позволяет проверить
+                входит ли текущий элемент в массив. (см. пример ниже). <b><i>Не работает с объектами!</i></b></li>
+            <li>
+                <b>Поиск индекса элемента в массиве</b> – <code>.indexOf(element)</code>, возвращает индекс элемента в
+                массиве или <code>-1</code> в случае если элемент не был найден.
+            </li>
+            <li>
+                <b>Создание массива из строки</b> – <code>.split(divider)</code>, разбивает строку по разделителю <code>divider</code>
+                и превращает в массив (см. пример ниже)
+            </li>
+            <li>
+                <b>Превратить массив в строку</b> – <code>.join(divider)</code>, составляет из массива строку, добавляя
+                разделитель <code>divider</code> после каждого элемента, кроме последнего.
+            </li>
+            <li>
+                <b>Соединить несколько массивов</b> – <code>.concat(arr1, arr2, ..., arrN)</code>, создает <b>новый</b>
+                массив из всех переданных массивов в качестве аргументов. Альтернативой этому методу может служить
+                развертывание массивов с помощью <i>spread</i> оператора. <code>[...arr1, ...arr2, ..., ...arrN]</code>
+            </li>
+            <li>
+                <b>Отрезать часть массива</b> – <code>.slice(startIndex, endIndex)</code> – позволяет обрезать массив в
+                нужных нам значения от startIndex до endIndex <b>(включительно)</b>.
+            </li>
+            <li>
+                <b>Заменить или вырезать часть массива</b> – <code>.splice(startIndex, cutLength,
+                ...newElements?)</code> – вырезает элементы начиная с индекса <code>startIndex</code> до <code>startIndex
+                + cutLength</code>, все последующие параметры – будут вставлены на место вырезанных элементов.
+                <b>Этот метод изменяет исходный массив, будьте осторожнее</b>
+            </li>
+        </ul>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky" data-slug-hash="PoqqEZb" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="otherMethodsArray">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/PoqqEZb">
+  otherMethodsArray</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+
+</div>
+</body>
+</html>

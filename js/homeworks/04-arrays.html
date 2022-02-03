@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>HW: Массивы</title>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Домашнее задание по теме Массивы
+    </h1>
+    <section>
+        <div class="subsection">
+            <p><b>(!) Домашние задания нужно сдавать в виде странички на GITPAGES</b>. <a
+                    href="https://youtu.be/HzB1zcmamIk">
+                Видео о том как сдавать ДЗ
+            </a></p>
+            <br/>
+            <p>
+                <b>Каждое задание выполняется в виде чистой функции. Функция возвращает массив или другое значение, но не меняет его!</b>
+                <br>
+                <b>В косноль/html выводите результат вызова функции:</b>
+                <br>
+                <code>const pairs = getPairs(students);</code>
+                <br>
+                <code>console.log(pairs);</code>
+                <br>
+                <br>
+                Перед выполнением этого домашнего задания необходимо создать 3 массива:
+                <br/> <code>const students = ["Саша", "Игорь", "Лена", "Ира", "Алексей", "Светлана"];</code>
+                <br/> <code>const themes = ["Дифференциальные уравнения", "Теория автоматов", "Алгоритмы и структуры
+                данных"];</code>
+                <br/> <code>const marks = [4, 5, 5, 3, 4, 5];</code>
+            </p>
+            <br>
+            <ol>
+                <li>Разбейте студентов на пары(парень + девушка) для работы над проектом. У вас должен получиться
+                    вложенный массив с парами студентов: <code>[["Саша", "Лена"], [..], [...]];</code>
+                </li>
+                <li>
+                    Сопоставьте пары из предыдущего задания и темы проектов, над которым студенты будут работать. Должен получиться вложенный массив вида:
+                    <code>[["Саша и Лена", "Теория автоматов"], [...], [...]]</code>
+                </li>
+                <li>
+                    Сопоставьте оценки(marks) со студентом(students): <code>[["Саша", 4], [...], [...]]</code>
+                </li>
+                <li>
+                    Поставьте каждой паре случайную оценку(от 1 до 5) за проект<i>(тут функция будет нечистой, но не должна мутировать массив)</i>: <code>[["Саша и Лена", "Теория автоматов", 5], [...], [...]]</code>
+                </li>
+            </ol>
+        </div>
+    </section>
+</div>
+</body>
+</html>

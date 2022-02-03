@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Переменные и типы данных</title>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>
+        Материалы по теме "Методы массивов"
+    </h1>
+    <section>
+        <h2>Методы для работы с массивами</h2>
+        <p>
+
+            <code>Array.forEach(callback)</code> – метод, который позволяет применить функцию <code>callback</code>
+            последовательно к каждому элементу массива. <b>Мутирует исходный массив</b>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="YzXXOrq"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="forEach">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/YzXXOrq">
+  forEach</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br>
+        <br>
+        <p id="map">
+            <code>Array.map(callback)</code> – создает новый массив, <b>такой же длинны</b> как и исходный. <b>Этот
+            метод НЕ мутирует исходный массив</b> Элементами
+            нового массива становятся результаты функции <code>callback</code>. Функция <code>callback</code> получает
+            параметры:
+            <br>
+            <br>
+            <code>element</code> – поочередно каждый элемент массива,
+            <br>
+            <br>
+            <code>index</code> – индекс текущего элемента,
+            <br>
+            <br>
+            <code>array</code> – исходный массив.
+        </p>
+        <br>
+        <p><b>Особое внимание прошу обратить на наименование параметров <code>callback</code> функции.</b></p>
+        <p>Старайтесь называть параметры согласно тому, что они хранят.</p>
+        <p>Например: если вы перебираете массив <code>flowers</code>
+            – называйте первый параметр не <s><b>element</b></s>, а <code>flower</code></p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="vYOOzRX"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="map">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/vYOOzRX">
+  map</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.filter(callback)</code> – этот метод позволяет удалить из исходного массива значения, которые не
+            подходят по условиям функции <code>callback</code>. <b>Этот
+            метод НЕ мутирует исходный массив</b>. <i class="hint">Функция <code>callback</code> получает
+            те же параметры что и в <a href="#map">map</a>.</i>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="abOORqp"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="filter">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/abOORqp">
+  filter</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.sort(callback)</code> – этот метод используется для сортировки массива.
+            <b>Этот
+                метод МУТИРУЕТ исходный массив</b>
+            <i class="hint">Функция
+                <code>callback(currentElement, prevElement)</code> получает два параматра <code>prevElement</code> и
+                <code>currentElement</code>.</i>
+            <br>
+            <br>
+            Если <code>currentElement</code> больше <code>prevElement</code> – функция должна вернуть <code>1</code>
+            <br>
+            <br>
+            Если <code>currentElement</code> меньше <code>prevElement</code> – функция должна вернуть <code>-1</code>
+            <br>
+            <br>
+            Если <code>currentElement</code> равен <code>prevElement</code> – функция должна вернуть <code>0</code>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="yLNNREy"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="sort">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/yLNNREy">
+  sort</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.find(callback)</code> – этот метод позволяет найти элемент по конкретному признаку. Обычно
+            используется для поиска объектов внутри массива. <i class="hint">Функция <code>callback</code> получает те
+            же параметры
+            что и в <a href="#map">map</a> и должна вернуть <code>true</code> для подходящего элемента.</i>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="YzXXMaq"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="YzXXMaq">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/YzXXMaq">
+  YzXXMaq</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.findIndex(callback)</code> – этот метод похож на <code>.indexOf()</code> и <code>.find()</code>.
+            Он ищет индекс элемента по конкретному признаку.
+            <i class="hint">Функция <code>callback</code> получает те же
+                параметры что и в <a href="#map">map</a> и должна вернуть <code>true</code> для подходящего
+                элемента.</i>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="YzXXMvW"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="hatIndex">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/YzXXMvW">
+  hatIndex</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.every(callback)</code> – этот метод проверяет соответствует ли каждый элемент массива
+            определенному условию <i class="hint">Функция <code>callback</code> получает те же параметры
+            что и в <a href="#map">map</a> и должна вернуть <code>true</code> или <code>false</code>.</i> Если функция
+            вернула <code>false</code> хотя бы для одного элемента – <code>Array.every(callback)</code> тоже вернет
+            <code>false</code>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="BaNNEPw"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="BaNNEPw">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/BaNNEPw">
+  BaNNEPw</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.some(callback)</code> – этот метод првоеряет соответствует ли хотя бы один элемент массива
+            определенному условию. <i class="hint">Функция <code>callback</code> получает те же параметры
+            что и в <a href="#map">map</a> и должна вернуть <code>true</code> или <code>false</code>.</i>
+            Если функция вернула <code>true</code> хотя бы для одного элемента – <code>Array.some(callback)</code> тоже
+            будет равен <code>true</code>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="bGddJQL"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="some">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/bGddJQL">
+  some</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        </p>
+        <br><br>
+
+        <p>
+            <code>Array.reduce(callback, initialValue?)</code> – этот метод создан для того, чтобы <b>аккумулировать</b>
+            значение (то есть приводить массив к одному значению).
+            Функция <code>callback(accumulatedValue, element, index, array)</code> получает параметры:
+            <br>
+            <br>
+            <code>accumulatedValue</code> – Значение, которое вернул прошлый вызов <code>callback</code> или первый
+            элемент массива или <code>initialValue</code>
+            <br>
+            <br>
+            <code>element</code> – следующий элемент массива. Если не был указан <code>initialValue</code>, то при
+            первом проходе по массиву будет равный второму элементу (<code>array[1]</code>)
+            <br>
+            <br>
+            <code>index</code> – индекс текущего элемента.
+            <br>
+            <br>
+            <code>array</code> – исходный массив.
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="qBddwGb"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="reduce">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/qBddwGb">
+  reduce</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        </p>
+        <br><br>
+
+        <p>
+            <b>Chaining</b>(Чейнинг) методов массива это возможность вызывать подряд несколько методов. Это возможно,
+            благодаря тому, что некоторые методы возвращают новый массив после выпонения.
+        </p>
+        <p>
+            Обычно это используется для того, чтобы выполнить несколько действий с одним и тем же массивом:
+            отфильтровать, отсортировать, привести к одному значению.
+            <b>Любой набор подобный действий может заменить одна функция в методе
+                <code>Array.reduce(callback)</code></b>
+        </p>
+        <p class="codepen" data-height="265" data-theme-id="default" data-default-tab="js,result" data-user="trostinsky"
+           data-slug-hash="gOppJYX"
+           style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+           data-pen-title="chaining">
+  <span>See the Pen <a href="https://codepen.io/trostinsky/pen/gOppJYX">
+  chaining</a> by Vladislav Trostinsky (<a href="https://codepen.io/trostinsky">@trostinsky</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+    </section>
+</div>
+</body>
+</html>
